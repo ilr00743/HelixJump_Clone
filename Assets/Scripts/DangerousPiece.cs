@@ -9,6 +9,7 @@ public class DangerousPiece : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out Ball ball))
         {
+            ball.Fail();
             ball.StopMovement();
         }
     }

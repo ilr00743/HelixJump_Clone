@@ -42,7 +42,8 @@ public class Ball : MonoBehaviour
 
     private void Bounce()
     {
-        _rigidbody.velocity = new Vector3(0, _bounceSpeed, 0);
+        _rigidbody.velocity = new Vector3(0, _bounceSpeed, 0);   
+
     }
 
     public void StopMovement()
@@ -53,5 +54,10 @@ public class Ball : MonoBehaviour
     public void Finish()
     {
         Finished?.Invoke();
+    }
+
+    public void Fail()
+    {
+        Failed?.Invoke();
     }
 }

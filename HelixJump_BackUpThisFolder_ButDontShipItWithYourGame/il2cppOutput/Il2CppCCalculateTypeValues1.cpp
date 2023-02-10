@@ -380,6 +380,8 @@ struct AudioTrack_t28A237BE8E15F2A1DE39A3DAC10AC0526D823FC4;
 struct AutoPerformanceLevelController_t0453CBF43CF2DF317C742ED8D717A03C223D67AE;
 // UnityEngine.AvatarMask
 struct AvatarMask_tC1D777FFB77C952502ECF6D80FAFAD16B27B02AF;
+// Ball
+struct Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B;
 // Unity.VisualScripting.Antlr3.Runtime.BaseRecognizer
 struct BaseRecognizer_tDB3DD71405FD144217E223CEDA0FD1DEDA989F5B;
 // UnityEngine.Yoga.BaselineFunction
@@ -424,8 +426,6 @@ struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
 struct DevicePerformanceControlImpl_tEB7D163F25D2E50D95FB77546E9C6DA299F90E4D;
 // System.Exception
 struct Exception_t;
-// FinishTrigger
-struct FinishTrigger_t9D0E8EC9C0782530EB0FEEC0C20B744665C11429;
 // Unity.VisualScripting.FlowGraph
 struct FlowGraph_tF9E42FECF535CD5BAB10F75672B5BCE285627A45;
 // UnityEngine.Font
@@ -10233,6 +10233,8 @@ struct CylinderMovement_t6DDB5D190AF8D10951EF0E9B47FA5300353F0CBF  : public Mono
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____cylinder_4;
 	// System.Single CylinderMovement::_rotateSpeed
 	float ____rotateSpeed_5;
+	// Ball CylinderMovement::_ball
+	Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ____ball_6;
 };
 
 // DangerousPiece
@@ -10243,13 +10245,19 @@ struct DangerousPiece_t9765876A92815F983FA69DF7A121EF0CB8A4686C  : public MonoBe
 // UI.FailPanel
 struct FailPanel_t803F1F9CB2277795309BF3EAD88EDB937480BB8E  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
+	// Ball UI.FailPanel::_ball
+	Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ____ball_4;
+	// UnityEngine.UI.Image UI.FailPanel::_panel
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____panel_5;
+	// TMPro.TMP_Text UI.FailPanel::_text
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____text_6;
 };
 
 // UI.FinishPanel
 struct FinishPanel_tC39F4D3F78E4A1E2893080799CC81014C13169E6  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// FinishTrigger UI.FinishPanel::_finishTrigger
-	FinishTrigger_t9D0E8EC9C0782530EB0FEEC0C20B744665C11429* ____finishTrigger_4;
+	// Ball UI.FinishPanel::_ball
+	Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ____ball_4;
 	// UnityEngine.UI.Image UI.FinishPanel::_panel
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____panel_5;
 	// TMPro.TMP_Text UI.FinishPanel::_text
@@ -10261,8 +10269,6 @@ struct FinishTrigger_t9D0E8EC9C0782530EB0FEEC0C20B744665C11429  : public MonoBeh
 {
 	// System.Int32 FinishTrigger::_collisionCount
 	int32_t ____collisionCount_4;
-	// System.Action FinishTrigger::Finished
-	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___Finished_5;
 };
 
 // Fps

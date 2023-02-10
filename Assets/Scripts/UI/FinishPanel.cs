@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,30 +7,21 @@ namespace UI
 {
     public class FinishPanel : MonoBehaviour
     {
-        [SerializeField] private FinishTrigger _finishTrigger;
+        [SerializeField] private Ball _ball;
         [SerializeField] private Image _panel;
         [SerializeField] private TMP_Text _text;
+        [SerializeField] private LevelController _levelController;
 
         private void Start()
         {
-            _finishTrigger.Finished += OnFinished;
+            _ball.Finished += OnFinished;
         }
 
         private void OnFinished()
         {
-            Debug.Log("Finished");
             _panel.enabled = true;
             _text.enabled = true;
-            if (SceneManager.GetActiveScene().buildIndex+1 > SceneManager.sceneCount)
-            {
-                SceneManager.LoadSceneAsync(0);
-
-            }
-            else
-            {
-                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-
+            Invoke(nameof(_levelController.LoadNextLevel), 2f);
         }
     }
 }

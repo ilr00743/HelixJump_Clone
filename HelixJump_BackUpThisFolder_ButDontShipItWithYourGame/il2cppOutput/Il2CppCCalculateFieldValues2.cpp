@@ -52,12 +52,12 @@ struct HitInfoU5BU5D_tDAE7DF0D2B0BE3EB2FD25FB4418704E27A2BF1D5;
 struct Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07;
 // System.Collections.ArrayList
 struct ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A;
+// Ball
+struct Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B;
 // UnityEngine.Camera
 struct Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184;
 // Circle
 struct Circle_t94A39776481461358A492459B485D07163250442;
-// FinishTrigger
-struct FinishTrigger_t9D0E8EC9C0782530EB0FEEC0C20B744665C11429;
 // UnityEngine.Font
 struct Font_tC95270EA3198038970422D78B74A7F2E218A96B6;
 // UnityEngine.GameObject
@@ -1195,13 +1195,26 @@ struct CylinderMovement_t6DDB5D190AF8D10951EF0E9B47FA5300353F0CBF  : public Mono
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____cylinder_4;
 	// System.Single CylinderMovement::_rotateSpeed
 	float ____rotateSpeed_5;
+	// Ball CylinderMovement::_ball
+	Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ____ball_6;
+};
+
+// UI.FailPanel
+struct FailPanel_t803F1F9CB2277795309BF3EAD88EDB937480BB8E  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// Ball UI.FailPanel::_ball
+	Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ____ball_4;
+	// UnityEngine.UI.Image UI.FailPanel::_panel
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____panel_5;
+	// TMPro.TMP_Text UI.FailPanel::_text
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____text_6;
 };
 
 // UI.FinishPanel
 struct FinishPanel_tC39F4D3F78E4A1E2893080799CC81014C13169E6  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// FinishTrigger UI.FinishPanel::_finishTrigger
-	FinishTrigger_t9D0E8EC9C0782530EB0FEEC0C20B744665C11429* ____finishTrigger_4;
+	// Ball UI.FinishPanel::_ball
+	Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ____ball_4;
 	// UnityEngine.UI.Image UI.FinishPanel::_panel
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____panel_5;
 	// TMPro.TMP_Text UI.FinishPanel::_text
@@ -1213,8 +1226,6 @@ struct FinishTrigger_t9D0E8EC9C0782530EB0FEEC0C20B744665C11429  : public MonoBeh
 {
 	// System.Int32 FinishTrigger::_collisionCount
 	int32_t ____collisionCount_4;
-	// System.Action FinishTrigger::Finished
-	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___Finished_5;
 };
 
 // LevelNumber
@@ -1456,21 +1467,24 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6126[7] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6127[5] = 
 {
 	0,0,static_cast<int32_t>(offsetof(Circle_t94A39776481461358A492459B485D07163250442, ____piecePrefabs_6)),static_cast<int32_t>(offsetof(Circle_t94A39776481461358A492459B485D07163250442, ____finishPrefab_7)),static_cast<int32_t>(offsetof(Circle_t94A39776481461358A492459B485D07163250442, ____startPrefab_8)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6129[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6129[3] = 
 {
-	static_cast<int32_t>(offsetof(CylinderMovement_t6DDB5D190AF8D10951EF0E9B47FA5300353F0CBF, ____cylinder_4)),static_cast<int32_t>(offsetof(CylinderMovement_t6DDB5D190AF8D10951EF0E9B47FA5300353F0CBF, ____rotateSpeed_5)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6131[2] = 
+	static_cast<int32_t>(offsetof(CylinderMovement_t6DDB5D190AF8D10951EF0E9B47FA5300353F0CBF, ____cylinder_4)),static_cast<int32_t>(offsetof(CylinderMovement_t6DDB5D190AF8D10951EF0E9B47FA5300353F0CBF, ____rotateSpeed_5)),static_cast<int32_t>(offsetof(CylinderMovement_t6DDB5D190AF8D10951EF0E9B47FA5300353F0CBF, ____ball_6)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6131[1] = 
 {
-	static_cast<int32_t>(offsetof(FinishTrigger_t9D0E8EC9C0782530EB0FEEC0C20B744665C11429, ____collisionCount_4)),static_cast<int32_t>(offsetof(FinishTrigger_t9D0E8EC9C0782530EB0FEEC0C20B744665C11429, ___Finished_5)),};
+	static_cast<int32_t>(offsetof(FinishTrigger_t9D0E8EC9C0782530EB0FEEC0C20B744665C11429, ____collisionCount_4)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6132[5] = 
 {
 	static_cast<int32_t>(offsetof(MapGenerator_tF06BD24367649B5388369163E0012EEBF4263A8A, ____circlePrefab_4)),static_cast<int32_t>(offsetof(MapGenerator_tF06BD24367649B5388369163E0012EEBF4263A8A, ____cylinder_5)),static_cast<int32_t>(offsetof(MapGenerator_tF06BD24367649B5388369163E0012EEBF4263A8A, ____verticalDistance_6)),static_cast<int32_t>(offsetof(MapGenerator_tF06BD24367649B5388369163E0012EEBF4263A8A, ____circlesAmount_7)),static_cast<int32_t>(offsetof(MapGenerator_tF06BD24367649B5388369163E0012EEBF4263A8A, ____circles_8)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6133[1] = 
 {
 	static_cast<int32_t>(offsetof(LevelNumber_t217157CF047254CFE24DEB7BDA5AAA91E32C49D0, ____index_4)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6134[3] = 
+{
+	static_cast<int32_t>(offsetof(FailPanel_t803F1F9CB2277795309BF3EAD88EDB937480BB8E, ____ball_4)),static_cast<int32_t>(offsetof(FailPanel_t803F1F9CB2277795309BF3EAD88EDB937480BB8E, ____panel_5)),static_cast<int32_t>(offsetof(FailPanel_t803F1F9CB2277795309BF3EAD88EDB937480BB8E, ____text_6)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6135[3] = 
 {
-	static_cast<int32_t>(offsetof(FinishPanel_tC39F4D3F78E4A1E2893080799CC81014C13169E6, ____finishTrigger_4)),static_cast<int32_t>(offsetof(FinishPanel_tC39F4D3F78E4A1E2893080799CC81014C13169E6, ____panel_5)),static_cast<int32_t>(offsetof(FinishPanel_tC39F4D3F78E4A1E2893080799CC81014C13169E6, ____text_6)),};
+	static_cast<int32_t>(offsetof(FinishPanel_tC39F4D3F78E4A1E2893080799CC81014C13169E6, ____ball_4)),static_cast<int32_t>(offsetof(FinishPanel_tC39F4D3F78E4A1E2893080799CC81014C13169E6, ____panel_5)),static_cast<int32_t>(offsetof(FinishPanel_tC39F4D3F78E4A1E2893080799CC81014C13169E6, ____text_6)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6139[3] = 
 {
 	static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_nTag_0)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_aValue_1)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___elist_2)),};
