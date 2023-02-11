@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     [SerializeField] private MapGenerator _mapGenerator;
     [SerializeField] private float _fallSpeed;
     [SerializeField] private float _bounceSpeed;
+    [SerializeField] private int _gravityMultiplier = 10;
 
     private Rigidbody _rigidbody;
 
@@ -33,7 +34,7 @@ public class Ball : MonoBehaviour
         var currentVelocity = _rigidbody.velocity;
         currentVelocity.y = Mathf.Clamp(_rigidbody.velocity.y, -_fallSpeed, _bounceSpeed);
         _rigidbody.velocity = currentVelocity;
-        _rigidbody.AddForce(Physics.gravity * 10, ForceMode.Acceleration);
+        _rigidbody.AddForce(Physics.gravity * _gravityMultiplier, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)

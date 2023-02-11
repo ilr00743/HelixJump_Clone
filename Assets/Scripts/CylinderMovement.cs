@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -27,7 +26,7 @@ public class CylinderMovement : MonoBehaviour, IDragHandler, IBeginDragHandler
 
         currentRotationY += -eventData.delta.x * _rotateSpeed * Time.deltaTime;
         cylinderRotation.eulerAngles = new Vector3(0, currentRotationY, 0);
-        
+
         _cylinder.rotation = cylinderRotation;
     }
 
