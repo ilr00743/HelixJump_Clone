@@ -21,7 +21,7 @@ namespace UI
         {
             _panel.enabled = true;
             _text.enabled = true;
-            Invoke(nameof(_levelController.LoadNextLevel), 2f);
+            _levelController.LoadNextLevel();
         }
     }
 }

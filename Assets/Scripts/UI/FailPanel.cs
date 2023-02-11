@@ -22,7 +22,7 @@ namespace UI
         {
             _panel.enabled = true;
             _text.enabled = true;
-            Invoke(nameof(_levelController.Restart), 2f);
+            _levelController.Restart();
         }
     }
 }
