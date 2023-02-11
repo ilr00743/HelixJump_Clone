@@ -5,8 +5,9 @@ public class CircleDisableTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Ball ball))
+        if (other.gameObject.TryGetComponent(out Ball ball))
         {
+            Debug.Log("Trigger");
             transform.parent.gameObject.SetActive(false);
         }
     }
