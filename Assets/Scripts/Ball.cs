@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
-    private readonly Vector3 _localGravity = new Vector3(0,-30,0);
+    private readonly Vector3 _localGravity = new Vector3(0,-35,0);
     
     [SerializeField] private MapGenerator _mapGenerator;
     [SerializeField] private float _fallSpeed;
@@ -32,7 +32,8 @@ public class Ball : MonoBehaviour
     {
         var currentVelocity = _rigidbody.velocity;
         currentVelocity.y = Mathf.Clamp(_rigidbody.velocity.y, -_fallSpeed, _bounceSpeed);
-        _rigidbody.velocity = currentVelocity + _localGravity * Time.fixedDeltaTime;
+        _rigidbody.velocity = currentVelocity;
+        _rigidbody.AddForce(Physics.gravity * 10, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -42,13 +43,14 @@ public class Ball : MonoBehaviour
 
     private void Bounce()
     {
-        _rigidbody.velocity = new Vector3(0, _bounceSpeed, 0);   
+        _rigidbody.velocity = Vector3.up * _bounceSpeed;   
 
     }
 
     public void StopMovement()
     {
         _rigidbody.velocity = Vector3.zero;
+        _rigidbody.isKinematic = true;
     }
 
     public void Finish()
