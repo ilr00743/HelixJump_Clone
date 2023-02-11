@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2765028200232098237}
   - component: {fileID: 2765028200232098211}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TouchDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 2765028200252659811}
   - component: {fileID: 2765028200252659836}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Level Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,6 +573,7 @@ MonoBehaviour:
   _ball: {fileID: 0}
   _panel: {fileID: 6289084174446609846}
   _text: {fileID: 6961552850056793169}
+  _levelController: {fileID: 0}
 --- !u!1 &8053076024544595714
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,3 +802,4 @@ MonoBehaviour:
   _ball: {fileID: 0}
   _panel: {fileID: 5667581912782653371}
   _text: {fileID: 2494532887075137147}
+  _levelController: {fileID: 0}
