@@ -18,7 +18,7 @@ public class LevelController : MonoBehaviour
     {
         var delay = new WaitForSeconds(2f);
         yield return delay;
-        if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCount)
+        if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadSceneAsync(0);
         }
