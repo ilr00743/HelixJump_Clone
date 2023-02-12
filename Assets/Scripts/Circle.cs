@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using Extension;
 using UnityEngine;
@@ -9,6 +11,7 @@ public class Circle : MonoBehaviour
     [SerializeField] private List<GameObject> _piecePrefabs;
     [SerializeField] private GameObject _finishPrefab;
     [SerializeField] private GameObject _startPrefab;
+    private Ball _ball;
 
     [ContextMenu(nameof(GenerateRandomCircle))]
     public Circle GenerateRandomCircle()
@@ -23,6 +26,19 @@ public class Circle : MonoBehaviour
             currentPiece.transform.localRotation = rotation;
         }
         return parent;
+    }
+
+    private void Start()
+    {
+        _ball = FindObjectOfType<Ball>();
+    }
+
+    private void Update()
+    {
+        if (_ball.transform.position.y < transform.position.y)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public Circle GenerateFinishCircle()

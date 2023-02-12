@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +8,20 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private Transform _cylinder;
     [SerializeField] private float _verticalDistance;
     [SerializeField, Min(10)] private int _circlesAmount;
-    private List<Circle> _circles = new();
+    private List<Circle> _circles;
 
+    private void Awake()
+    {
+        _circles = new List<Circle>();
+    }
+
+    private void Start()
+    {
+        for (var i = 0; i < _cylinder.childCount; i++)
+        {
+            _circles.Add(_cylinder.GetChild(i).GetComponent<Circle>());
+        }
+    }
 
     [ContextMenu(nameof(SpawnCirclesEditor))]
     public void SpawnCirclesEditor()
@@ -36,12 +49,16 @@ public class MapGenerator : MonoBehaviour
             
             currentCircle.transform.SetParent(_cylinder);
             currentCircle.transform.position = new Vector3(0, i * _verticalDistance, 0);
-            _circles.Add(currentCircle);
+            // _circles.Add(currentCircle);
         }
     }
 
-    public Vector3 GetLastCirclePosition()
+    public Vector3 GetStartCirclePosition()
     {
         return _circles[^1].transform.position;
+    }
+    public Vector3 GetFinishCirclePosition()
+    {
+        return _circles[0].transform.position;
     }
 }

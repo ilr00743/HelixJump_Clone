@@ -4,8 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
-    private readonly Vector3 _localGravity = new Vector3(0,-35,0);
-    
     [SerializeField] private MapGenerator _mapGenerator;
     [SerializeField] private float _fallSpeed;
     [SerializeField] private float _bounceSpeed;
@@ -13,6 +11,7 @@ public class Ball : MonoBehaviour
     [SerializeField] private Splash _splash;
     private MeshRenderer _renderer;
     private Rigidbody _rigidbody;
+    private Vector3 _startPosition;
 
     public event Action Failed;
     public event Action Finished;
@@ -21,7 +20,7 @@ public class Ball : MonoBehaviour
     private void PlaceOnTop()
     {
         var offsetY = new Vector3(transform.position.x,5,transform.position.z);
-        var startPosition = _mapGenerator.GetLastCirclePosition() + offsetY;
+        var startPosition = _mapGenerator.GetStartCirclePosition() + offsetY;
         transform.position = startPosition;
     }
 
