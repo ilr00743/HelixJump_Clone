@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5277806788264804879}
   - component: {fileID: 5277806788264804878}
   - component: {fileID: 8427084049209506949}
+  - component: {fileID: 7874942102514758654}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -52,6 +53,8 @@ MonoBehaviour:
   _mapGenerator: {fileID: 0}
   _fallSpeed: 30
   _bounceSpeed: 35
+  _gravityMultiplier: 10
+  _splash: {fileID: 6245912009585588169, guid: 68ce4b18ca7835e4495f7157648ff7a1, type: 3}
 --- !u!33 &5277806788264804873
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -239,3 +242,15 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &7874942102514758654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277806788264804877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b579210a809092548805c58d6b8a0de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

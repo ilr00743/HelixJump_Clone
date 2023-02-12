@@ -10,7 +10,8 @@ public class Ball : MonoBehaviour
     [SerializeField] private float _fallSpeed;
     [SerializeField] private float _bounceSpeed;
     [SerializeField] private int _gravityMultiplier = 10;
-
+    [SerializeField] private Splash _splash;
+    private MeshRenderer _renderer;
     private Rigidbody _rigidbody;
 
     public event Action Failed;
@@ -26,26 +27,32 @@ public class Ball : MonoBehaviour
 
     private void Awake()
     {
+        _renderer = GetComponent<MeshRenderer>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
+        ClampVelocity();
+        _rigidbody.AddForce(Physics.gravity * _gravityMultiplier, ForceMode.Acceleration);
+    }
+
+    private void ClampVelocity()
+    {
         var currentVelocity = _rigidbody.velocity;
         currentVelocity.y = Mathf.Clamp(_rigidbody.velocity.y, -_fallSpeed, _bounceSpeed);
         _rigidbody.velocity = currentVelocity;
-        _rigidbody.AddForce(Physics.gravity * _gravityMultiplier, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        _splash.Generate(collision.contacts[0].point, collision.transform, _renderer.material.color);
         Bounce();
     }
 
     private void Bounce()
     {
-        _rigidbody.velocity = Vector3.up * _bounceSpeed;   
-
+        _rigidbody.velocity = Vector3.up * _bounceSpeed;
     }
 
     public void StopMovement()
