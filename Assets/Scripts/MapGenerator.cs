@@ -49,7 +49,6 @@ public class MapGenerator : MonoBehaviour
             
             currentCircle.transform.SetParent(_cylinder);
             currentCircle.transform.position = new Vector3(0, i * _verticalDistance, 0);
-            // _circles.Add(currentCircle);
         }
     }
 
